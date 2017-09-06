@@ -1,2 +1,2 @@
-# simple-book-store
+# Simple-Book-Store
 Simple Book Store
