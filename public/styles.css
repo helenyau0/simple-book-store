@@ -1,0 +1,38 @@
+.book-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+}
+
+.book-info {
+  display: flex;
+}
+
+.book-item {
+  border: 1px solid black;
+  /*max-width: 250px;
+  max-height: 250px;*/
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.column {
+  flex: 1;
+}
+
+.form-control {
+  margin-bottom: 1em;
+}
+
+.label {
+  color: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.single-book-info {
+  display: flex;
+  background-color: aqua;
+}

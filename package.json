@@ -4,6 +4,10 @@
   "description": "Simple Book Store",
   "main": "server.js",
   "scripts": {
+    "db:create": "dropdb --if-exists simple-bookstore && createdb simple-bookstore",
+    "db:schema": "psql simple-bookstore < ./src/models/database/schema.sql",
+    "db:insert": "psql simple-bookstore < ./src/models/database/seed_data/load-data.sql",
+    "db:init": "npm run db:create && npm run db:schema && npm run db:insert",
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +22,7 @@
   },
   "homepage": "https://github.com/helenyau0/simple-book-store#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "pg-promise": "^6.5.1",
     "pug": "^2.0.0-rc.4"

@@ -1,0 +1,26 @@
+html
+  head
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' crossorigin='anonymous')
+    link(rel='stylesheet', href='/styles.css')
+  body.container 
+    h1 Simple Book Store 
+    form.form-group(method='POST' action='/books/add')
+      input.form-control(name='title' placeholder='Title')
+      input.form-control(name='author' placeholder='Author')
+      input.form-control(name='genre' placeholder='Genre')
+      input.form-control(name='height' placeholder='Pages')
+      input.form-control(name='publisher' placeholder='Publisher')
+      input.btn.btn-success(type='submit' value='Add Book!')
+    .book-container 
+      each book in books 
+        .book-item
+          a(href='/books/' + book.id)
+            .book-info
+              p.label Title:
+              p= book.title
+            .book-info
+              p.label Author:
+              p= book.author 
+            .book-info
+              p.label Genre:
+              p= book.genre
