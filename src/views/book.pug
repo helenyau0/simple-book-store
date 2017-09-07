@@ -1,0 +1,13 @@
+html
+  head
+    title 
+  body
+    form(method='get', action='/book/delete/' + book.id)
+      ul
+        li=book.title
+        li=book.author
+        li=book.genre
+        li=book.height
+        li=book.publisher
+        input(type='submit' value='delete')
+    
