@@ -13,7 +13,7 @@
 .book-item {
   border: 1px solid black;
   /*max-width: 250px;
-  max-height: 250px;*/
+  max-pages: 250px;*/
   padding: 1em;
   margin-bottom: 1em;
 }

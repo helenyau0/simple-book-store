@@ -5,17 +5,17 @@ html
     .book-container 
       .single-book-info 
         form(method='POST' action='/books/delete/' + book.id)
-        p Title: 
-        p(value=book.id)= book.title
-        p Author: 
-        p(value=book.id)= book.author
-        p Genre: 
-        p(value=book.id)= book.genre
-        p Pages: 
-        p(value=book.id)= book.height
-        p Publisher: 
-        p(value=book.id)= book.publisher
-        input(type='submit' value='Delete')
+          p Title: 
+          p(value=book.id)= book.title
+          p Author: 
+          p(value=book.id)= book.author
+          p Genre: 
+          p(value=book.id)= book.genre
+          p Pages: 
+          p(value=book.id)= book.pages
+          p Publisher: 
+          p(value=book.id)= book.publisher
+          input(type='submit' value='Delete')
           
 
       

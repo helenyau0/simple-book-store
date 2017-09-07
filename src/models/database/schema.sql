@@ -5,6 +5,6 @@ CREATE TABLE book (
   title VARCHAR(100),
   author VARCHAR(100),
   genre VARCHAR(100),
-  height INTEGER,
+  pages INTEGER,
   publisher VARCHAR(100)
 );

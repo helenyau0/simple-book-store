@@ -14,8 +14,10 @@ const readById = (id) => {
   let query = `
     SELECT
       *
-    FROM book
-    WHERE id = $1
+    FROM
+      book
+    WHERE
+      id = $1
   `
   return db.one(query, [id])
 }
@@ -23,20 +25,21 @@ const readById = (id) => {
 const create = (book) => {
   let query = `
     INSERT INTO
-      book(title, author, genre, height, publisher)
+      book(title, author, genre, pages, publisher)
     VALUES
       ($1, $2, $3, $4, $5)
     RETURNING
       *
   `
-  return db.one(query, [book.title, book.author, book.genre, book.height, book.publisher])
+  return db.one(query, [book.title, book.author, book.genre, book.pages, book.publisher])
 }
 
 const remove = (id) => {
   let query = `
     DELETE FROM
       book
-    WHERE id = $1
+    WHERE
+      id = $1
   `
   return db.none(query, [id])
 }
