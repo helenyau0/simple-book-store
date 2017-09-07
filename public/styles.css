@@ -13,6 +13,49 @@
   display: none;
 }
 
+.navbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.home {
+  color: white;
+  font-size: 35px;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
 .addBook {
-  margin-left: 23px;
+  height: 30px;
+  margin: 26px;
+}
+
+.book {
+  color: white;
+}
+
+.plus {
+  margin-left: 2px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 900px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.items {
+  border: 1px solid black;
+  margin: 20px;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+
+a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
 }

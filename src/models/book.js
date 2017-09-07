@@ -2,7 +2,8 @@ const book = require('./database/book.js')
 
 module.exports = {
   getAll: book.readAll,
-  add: book.create,
-  remove: book.deleteBook,
-  get: book.get
+  create: book.create,
+  remove: book.remove,
+  get: book.get,
+  update: book.update
 }

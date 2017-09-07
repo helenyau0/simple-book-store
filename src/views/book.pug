@@ -1,13 +1,26 @@
-html
-  head
-    title 
-  body
-    form(method='get', action='/book/delete/' + book.id)
-      ul
-        li=book.title
-        li=book.author
-        li=book.genre
-        li=book.height
-        li=book.publisher
+include header
+body 
+  h1 Single View, Puggin'
+  .book-container 
+    .single-book-info 
+      form(method='POST' action='/book/update/' + book.id)
+        .book-info
+          p.label Title: 
+          p.editable(value=book.id)= book.title
+        .book-info
+          p.label Author: 
+          p.editable(value=book.id)= book.author
+        .book-info
+          p.label Genre: 
+          p.editable(value=book.id)= book.genre
+        .book-info
+          p.label Pages: 
+          p.editable(value=book.id)= book.pages
+        .book-info
+          p.label Publisher: 
+          p.editable(value=book.id)= book.publisher
+        input(type='submit' value= 'update')
+      form(method='get' action='/book/delete/' + book.id)
         input(type='submit' value='delete')
-    
+      
+  script(src='/main.js')
