@@ -1,13 +1,31 @@
+/*.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}*/
+
 .book-container {
   display: flex;
   flex: 1;
   flex-direction: column;
   flex-flow: wrap;
   justify-content: space-evenly;
+  margin-bottom: 1em;
+}
+h1 {
+  text-align: center;
 }
 
+.add-a-book {
+  display: flex;
+  justify-content: center;
+}
 .book-info {
   display: flex;
+}
+
+.editable {
+  cursor: pointer;
 }
 
 .book-item {
@@ -18,6 +36,22 @@
   margin-bottom: 1em;
 }
 
+.main-title {
+  flex: 1;
+  text-align: left;
+  color: white;
+  margin-left: 1em;
+}
+
+.nav {
+  display: flex;
+  margin-right: 1em;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
 .column {
   flex: 1;
 }
@@ -34,5 +68,41 @@
 
 .single-book-info {
   display: flex;
-  background-color: aqua;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 350px;
+  min-width: 350px;
+  background-color: #a9a9a9;
+  border-radius: 1em;
+}
+
+.user-action {
+  display: flex;
+}
+
+.modal-body .form-horizontal .col-sm-2,
+.modal-body .form-horizontal .col-sm-10 {
+    width: 100%
+}
+
+.modal-body .form-horizontal .control-label {
+    text-align: left;
+}
+.modal-body .form-horizontal .col-sm-offset-2 {
+    margin-left: 15px;
+}
+.myModal {
+  display: none;
+}
+
+.plus {
+  margin-left: .4em;
+}
+
+footer {
+  height: 10vh;
+  background-color: #000;
+  width: 100%;
+  border-radius: .5em;
 }

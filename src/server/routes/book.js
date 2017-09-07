@@ -17,9 +17,12 @@ router.post('/add', (request, response) => {
 })
 
 router.post('/delete/:id', (request, response) => {
-  console.log(request.body);
-  console.log(request.params);
   book.removeBook(request.params.id)
+    .then(() => {response.redirect('/books')})
+})
+
+router.post('/update/:id', (request, response) => {
+  book.update(request.params.id, request.body.updatedBook)
     .then(() => {response.redirect('/books')})
 })
 

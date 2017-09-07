@@ -44,9 +44,27 @@ const remove = (id) => {
   return db.none(query, [id])
 }
 
+const update = (id, book) => {
+  let query = `
+    UPDATE
+      book
+    SET
+      title=$1,
+      author=$2,
+      genre=$3,
+      pages=$4,
+      publisher=$5
+    WHERE id = $6
+    RETURNING
+      *
+  `
+  return db.any(query, [book[0], book[1], book[2], book[3], book[4], id])
+}
+
 module.exports = {
    readAll,
    readById,
+   update,
    create,
    remove
  }

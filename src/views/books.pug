@@ -1,26 +1,54 @@
-html
-  head
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' crossorigin='anonymous')
-    link(rel='stylesheet', href='/styles.css')
-  body.container 
-    h1 Simple Book Store 
-    form.form-group(method='POST' action='/books/add')
-      input.form-control(name='title' placeholder='Title')
-      input.form-control(name='author' placeholder='Author')
-      input.form-control(name='genre' placeholder='Genre')
-      input.form-control(name='pages' placeholder='Pages')
-      input.form-control(name='publisher' placeholder='Publisher')
-      input.btn.btn-success(type='submit' value='Add Book!')
-    .book-container 
-      each book in books 
-        .book-item
-          a(href='/books/' + book.id)
-            .book-info
-              p.label Title:
-              p= book.title
-            .book-info
-              p.label Author:
-              p= book.author 
-            .book-info
-              p.label Genre:
-              p= book.genre
+include ./partials/head 
+
+.add-a-book
+  button.btn.btn-default.addBook Add Book
+    span.glyphicon.glyphicon-plus.plus
+form.form-group(class='form-horizontal', method='post', action='/book/add')
+  .modal.fade(tabindex='-1', role='dialog')
+  .modal-dialog(role='document')
+    .modal-content.myModal
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4.modal-title Add Book
+      .modal-body
+        .form-group
+          label.col-sm-2.control-label Title
+          .col-sm-10
+            input.form-control(type='text', name='title' placeholder='Title')
+        .form-group
+          label.col-sm-2.control-label Author
+          .col-sm-10
+            input.form-control(type='text', name='author' placeholder='Author')
+        .form-group
+          label.col-sm-2.control-label Genre
+          .col-sm-10
+            input.form-control(type='text', name='genre' placeholder='Genre')
+        .form-group
+          label.col-sm-2.control-label Height
+          .col-sm-10
+            input.form-control(type='text', name='height' placeholder='Pages')
+        .form-group
+          label.col-sm-2.control-label Publisher
+          .col-sm-10
+            input.form-control(type='text', name='publisher' placeholder='Publisher')
+      .modal-footer
+        button.btn.btn-default.exit(type='button', data-dismiss='modal') Close
+        button.btn.btn-primary.save(type='submit') Add Book
+
+.book-container 
+  each book in books 
+    .book-item
+      a(href='/books/' + book.id)
+        .book-info
+          p.label Title:
+          p= book.title
+        .book-info
+          p.label Author:
+          p= book.author 
+        .book-info
+          p.label Genre:
+          p= book.genre
+
+include ./partials/footer           
+  script(src='/main.js')
