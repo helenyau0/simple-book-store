@@ -3,7 +3,7 @@ include ./partials/head
 .add-a-book
   button.btn.btn-default.addBook Add Book
     span.glyphicon.glyphicon-plus.plus
-form.form-group(class='form-horizontal', method='post', action='/book/add')
+form.form-group(class='form-horizontal', method='post', action='/books/add')
   .modal.fade(tabindex='-1', role='dialog')
   .modal-dialog(role='document')
     .modal-content.myModal
@@ -34,7 +34,8 @@ form.form-group(class='form-horizontal', method='post', action='/book/add')
             input.form-control(type='text', name='publisher' placeholder='Publisher')
       .modal-footer
         button.btn.btn-default.exit(type='button', data-dismiss='modal') Close
-        button.btn.btn-primary.save(type='submit') Add Book
+        input.btn.btn-default(type='submit' name='_method' value= 'Add Book!')
+
         
     .book-container 
     

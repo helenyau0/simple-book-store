@@ -1,15 +1,24 @@
-/*.container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}*/
-
 .pages {
   text-align: center;
 }
 
 .pages a{
     margin-left: 1em;
+}
+
+.btn-delete {
+  position: relative;
+  bottom: 2.8em;
+  left: 2.5em;
+  background: red;
+  border: 0;
+  border-radius: .5em;
+}
+
+.btn-update {
+  background: lightgreen;
+  border: 0;
+  border-radius: .5em;
 }
 
 .query-search {

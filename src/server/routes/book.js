@@ -26,7 +26,9 @@ router.delete('/delete/:id', (request, response) => {
 
 router.put('/update/:id', (request, response) => {
   book.update(request.params.id, request.body.updatedBook)
-    .then(() => {response.redirect('/books')})
+    .then(db => {
+      response.redirect('/books')
+    }).catch(error => console.log('ERRROr from update error', error.code))
 })
 
 router.get('/search/:searchFor', (request, response) => {

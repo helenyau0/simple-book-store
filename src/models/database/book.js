@@ -14,7 +14,7 @@ const readAll = (page) => {
       $1
   `
   let currentOffset = ( page - 1 ) * 10
-  return db.any(query, [currentOffset])
+  return db.any(query, [currentOffset]).catch(error => error)
 }
 
 const readById = (id) => {
@@ -26,7 +26,7 @@ const readById = (id) => {
     WHERE
       id = $1
   `
-  return db.one(query, [id])
+  return db.one(query, [id]).catch(error => error)
 }
 
 const create = (book) => {
@@ -38,7 +38,7 @@ const create = (book) => {
     RETURNING
       *
   `
-  return db.one(query, [book.title, book.author, book.genre, book.pages, book.publisher])
+  return db.one(query, [book.title, book.author, book.genre, book.pages, book.publisher]).catch(error => error)
 }
 
 const remove = (id) => {
@@ -48,7 +48,7 @@ const remove = (id) => {
     WHERE
       id = $1
   `
-  return db.none(query, [id])
+  return db.none(query, [id]).catch(error => error)
 }
 
 const update = (id, book) => {
@@ -65,7 +65,8 @@ const update = (id, book) => {
     RETURNING
       *
   `
-  return db.any(query, [book[0], book[1], book[2], book[3], book[4], id])
+  console.log('from db', book);
+  return db.any(query, [book[0], book[1], book[2], book[3], book[4], id]).catch(error => error.code)
 }
 
 const searchFor = (searched) => {
@@ -78,7 +79,7 @@ const searchFor = (searched) => {
       lower(title || ' ' || author || ' ' || genre) LIKE $1::text
     LIMIT 10
     `
-  return db.any(query,[`%${searched.toString().toLowerCase().replace(/\s+/,'%')}%`])
+  return db.any(query,[`%${searched.toString().toLowerCase().replace(/\s+/,'%')}%`]).catch(error => error)
 }
 
 module.exports = {
