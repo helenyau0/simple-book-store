@@ -56,11 +56,11 @@ form.form-group(class='form-horizontal', method='post', action='/book/add')
   .pages
     .title
     - var count = 1 
-    a.previous(href=`/books/` ) <
+      a.previous(href=`/books/?page=${count - 1}` ) <
     while count < 11
       a(href=`/books/?page=${count}` ) #{count}
       - count++
-    a.forward(href=`/books/` ) >
+    a.forward(href=`/books/?page=${count + 1}` ) >
 
 include ./partials/footer           
   script(src='/main.js')

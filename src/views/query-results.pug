@@ -1,0 +1,21 @@
+include ./partials/head
+
+
+.book-container 
+  - var count = 0
+  each book in matchedBooks
+    if count < 11
+      .book-item
+        a(href='/books/' + book.id)
+          .book-info
+            p.label Title:
+            p= book.title
+          .book-info
+            p.label Author:
+            p= book.author 
+          .book-info
+            p.label Genre:
+            p= book.genre
+    - count ++
+
+include ./partials/footer           

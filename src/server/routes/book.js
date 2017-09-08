@@ -19,14 +19,22 @@ router.post('/add', (request, response) => {
     .then(() => {response.redirect('/books')})
 })
 
-router.post('/delete/:id', (request, response) => {
+router.delete('/delete/:id', (request, response) => {
   book.removeBook(request.params.id)
     .then(() => {response.redirect('/books')})
 })
 
-router.post('/update/:id', (request, response) => {
+router.put('/update/:id', (request, response) => {
   book.update(request.params.id, request.body.updatedBook)
     .then(() => {response.redirect('/books')})
+})
+
+router.get('/search/:searchFor', (request, response) => {
+  console.log(request.query);
+  book.search(request.query.searchTerm)
+    .then(matchedBooks => {
+      response.status(200).render('query-results', {matchedBooks})
+    })
 })
 
 module.exports = router

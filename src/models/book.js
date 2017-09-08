@@ -5,5 +5,6 @@ module.exports = {
   getOne: books.readById,
   add:books.create,
   removeBook: books.remove,
-  update: books.update
+  update: books.update,
+  search: books.searchFor
 }

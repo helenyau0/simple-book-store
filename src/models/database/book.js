@@ -68,10 +68,24 @@ const update = (id, book) => {
   return db.any(query, [book[0], book[1], book[2], book[3], book[4], id])
 }
 
+const searchFor = (searched) => {
+  let query = `
+    SELECT
+      *
+    FROM
+      book
+    WHERE
+      lower(title || ' ' || author || ' ' || genre) LIKE $1::text
+    LIMIT 10
+    `
+  return db.any(query,[`%${searched.toString().toLowerCase().replace(/\s+/,'%')}%`])
+}
+
 module.exports = {
    readAll,
    readById,
    update,
    create,
-   remove
+   remove,
+   searchFor
  }

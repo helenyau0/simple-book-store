@@ -1,5 +1,8 @@
 .navbar.navbar-inverse
   h1.main-title Simple Bookstore
+  form.form-group.query-search(method='get' action='/books/search/:searchFor')
+    input.form-control.query-field(type='text' id='query' name='searchTerm' placeholder='Search for Title, Author, Genre...')
+    input.btn.query-button(type='submit' value='Search')
   ul.nav.nav-pills
     li.active(role='presentation')
       a(href='/') Home

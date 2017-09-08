@@ -4,7 +4,7 @@ include ./partials/head
   h1 Single View, Yo
   .book-container 
     .single-book-info 
-      form(method='POST' action='/books/update/' + book.id)
+      form(method='POST' action='/books/update/' + book.id + '?_method=PUT')
         .book-info
           p.label Title: 
           p.editable(value=book.id)= book.title
@@ -20,9 +20,9 @@ include ./partials/head
         .book-info
           p.label Publisher: 
           p.editable(value=book.id)= book.publisher
-        input(type='submit' value= 'Update')
-      form(method='POST' action='/books/delete/' + book.id)
-        input(type='submit' value='Delete')
+        input(type='submit' name='_method' value= 'UPDATE')
+      form(method='POST' action='/books/delete/' + book.id + '?_method=DELETE')
+        input(type='submit' name='_method' value='DELETE')
 include ./partials/footer     
   script(src='/single-view.js')
 
