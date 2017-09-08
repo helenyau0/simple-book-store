@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   const page = ( parseInt( req.query.page, 10 ) ) || 1
   db.getAll(page)
   .then(books => {
-    res.render('allBooks', { books })
+    res.render('allBooks', { books, page })
   })
 })
 

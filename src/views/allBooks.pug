@@ -44,9 +44,12 @@ body
             .items
               p=book.title
               
+    if page > 1
+      a.active(href=`?page=${page-1}`) &laquo;
     -for(var i = 1; i <= 10; i++) {
       a.active(href=`/?page=${i}`) #{i}
     -}
+    a.active(href=`?page=${page+1}`) &raquo;
     
   
   script(src='/index.js')
