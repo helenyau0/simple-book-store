@@ -1,5 +1,8 @@
 include header
 body
+  .create
+    button.btn.btn-default.addBook Add Book 
+      span.glyphicon.glyphicon-plus.plus
   form(class='form-horizontal', method='post', action='/book/add')
     .modal.fade(tabindex='-1', role='dialog')
     .modal-dialog(role='document')
@@ -36,10 +39,15 @@ body
   .container
     nav(aria-label='Page navigation')
       each book in books
-          a(href='/book/' + book.id)
+          a.active(href='/book/' + book.id)
             span(aria-hidden='true')
             .items
               p=book.title
+              
+    -for(var i = 1; i <= 10; i++) {
+      a.active(href=`/?page=${i}`) #{i}
+    -}
+    
   
   script(src='/index.js')
   

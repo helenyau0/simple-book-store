@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const toggleInput = (event) => {
   event.target.style.display = 'none'
-  const i = document.createElement('input')
-  i.setAttribute('type', 'text')
-  i.setAttribute('name', 'updatedBook')
-  i.setAttribute('placeholder', event.target.innerHTML)
-  event.target.parentNode.appendChild(i)
-  i.style.display = 'block'
+  const input = document.createElement('input')
+  input.setAttribute('type', 'text')
+  input.setAttribute('name', 'updatedBook')
+  input.setAttribute('placeholder', event.target.innerHTML)
+  event.target.parentNode.appendChild(input)
+  input.style.display = 'block'
 }

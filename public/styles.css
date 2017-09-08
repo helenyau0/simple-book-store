@@ -1,13 +1,13 @@
 .modal-body .form-horizontal .col-sm-2,
 .modal-body .form-horizontal .col-sm-10 {
-    width: 100%
+  width: 100%
 }
 
 .modal-body .form-horizontal .control-label {
-    text-align: left;
+  text-align: left;
 }
 .modal-body .form-horizontal .col-sm-offset-2 {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 .myModal {
   display: none;
@@ -20,18 +20,24 @@
 
 .home {
   color: white;
-  font-size: 35px;
+  font-size: 30px;
   margin-left: auto;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.create {
+  display: flex;
+  justify-content: center;
 }
 
 .addBook {
   height: 30px;
-  margin: 26px;
+  margin-right: 30px;
 }
 
 .book {
   color: white;
+  margin-left: 10px;
 }
 
 .plus {
@@ -58,4 +64,8 @@ a {
   color: black;
   float: left;
   padding: 8px 16px;
+}
+
+.active {
+  justify-content: center;
 }

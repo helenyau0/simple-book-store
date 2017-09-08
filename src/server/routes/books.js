@@ -3,6 +3,7 @@ const db = require('../../models/book.js')
 
 router.post('/add', (req, res) => {
   const book = req.body
+
   db.remove(book)
   .then(books => {
     res.redirect('/book')
@@ -11,6 +12,7 @@ router.post('/add', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const { id } = req.params
+  
   db.get(id)
   .then(book => {
     res.render('book', { book })

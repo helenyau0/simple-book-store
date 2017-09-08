@@ -1,7 +1,8 @@
 const db = require('./db.js')
 
-const readAll = () => {
- return db.any('SELECT * FROM book')
+const readAll = (page) => {
+  const offset = (page - 1) * 10
+ return db.any('SELECT * FROM book ORDER BY title ASC LIMIT 9 OFFSET $1', [offset])
 }
 
 const create = (book) => {
