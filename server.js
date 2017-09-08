@@ -9,5 +9,5 @@ app.set('views', __dirname + '/src/views')
 app.use(middleware)
 app.use(routes)
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3005
 app.listen(port, () => console.log(`Running on ${port}`))

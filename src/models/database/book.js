@@ -1,13 +1,20 @@
 const db = require('./config')
 
-const readAll = () => {
+const readAll = (page) => {
   let query = `
     SELECT
       *
     FROM
      book
+   ORDER BY
+     title ASC
+    LIMIT
+      10
+    OFFSET
+      $1
   `
-  return db.any(query)
+  let currentOffset = ( page - 1 ) * 10
+  return db.any(query, [currentOffset])
 }
 
 const readById = (id) => {

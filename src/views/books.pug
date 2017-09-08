@@ -35,20 +35,32 @@ form.form-group(class='form-horizontal', method='post', action='/book/add')
       .modal-footer
         button.btn.btn-default.exit(type='button', data-dismiss='modal') Close
         button.btn.btn-primary.save(type='submit') Add Book
-
-.book-container 
-  each book in books 
-    .book-item
-      a(href='/books/' + book.id)
-        .book-info
-          p.label Title:
-          p= book.title
-        .book-info
-          p.label Author:
-          p= book.author 
-        .book-info
-          p.label Genre:
-          p= book.genre
+        
+    .book-container 
+    
+      - var count = 0
+      each book in books 
+        if count < 11
+          .book-item
+            a(href='/books/' + book.id)
+              .book-info
+                p.label Title:
+                p= book.title
+              .book-info
+                p.label Author:
+                p= book.author 
+              .book-info
+                p.label Genre:
+                p= book.genre
+        - count ++
+  .pages
+    .title
+    - var count = 1 
+    a.previous(href=`/books/` ) <
+    while count < 11
+      a(href=`/books/?page=${count}` ) #{count}
+      - count++
+    a.forward(href=`/books/` ) >
 
 include ./partials/footer           
   script(src='/main.js')

@@ -2,8 +2,11 @@ const router = require('express').Router()
 const book = require('../../models/book')
 
 router.get('/', (request, response) => {
-  book.getAllBooks()
-    .then(books => {response.render('books', {books})})
+  let page = ( parseInt( request.query.page, 10 ) ) || 1
+  book.getAllBooks(page)
+    .then(books => {
+      response.render('books', {books, page})
+    })
 })
 
 router.get('/:id', (request, response) => {

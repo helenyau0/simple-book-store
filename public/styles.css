@@ -4,6 +4,14 @@
   flex: 1;
 }*/
 
+.pages {
+  text-align: center;
+}
+
+.pages a{
+    margin-left: 1em;
+}
+
 .book-container {
   display: flex;
   flex: 1;
