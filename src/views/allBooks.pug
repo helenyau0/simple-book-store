@@ -1,0 +1,56 @@
+include header
+body
+  .create
+    button.btn.btn-default.addBook Add Book 
+      span.glyphicon.glyphicon-plus.plus
+  form(class='form-horizontal', method='post', action='/book/add')
+    .modal.fade(tabindex='-1', role='dialog')
+    .modal-dialog(role='document')
+      .modal-content.myModal
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') ×
+          h4.modal-title Add Book
+        .modal-body
+          .form-group
+            label.col-sm-2.control-label Title
+            .col-sm-10
+              input.form-control(type='text', name='title')
+          .form-group
+            label.col-sm-2.control-label Author
+            .col-sm-10
+              input.form-control(type='text', name='author')
+          .form-group
+            label.col-sm-2.control-label Genre
+            .col-sm-10
+              input.form-control(type='text', name='genre')
+          .form-group
+            label.col-sm-2.control-label Height
+            .col-sm-10
+              input.form-control(type='text', name='height')
+          .form-group
+            label.col-sm-2.control-label Publisher
+            .col-sm-10
+              input.form-control(type='text', name='publisher')
+        .modal-footer
+          button.btn.btn-default.exit(type='button', data-dismiss='modal') Close
+          button.btn.btn-primary.save(type='submit') Add Book
+    
+  .container
+    nav(aria-label='Page navigation')
+      each book in books
+        a.active(href='/book/' + book.id)
+          span(aria-hidden='true')
+          .items
+            p=book.title
+              
+    if page > 1
+      a.active(href=`?page=${page-1}`) &laquo;
+    -for(var i = 1; i <= 10; i++) {
+      a.active(href=`/?page=${i}`) #{i}
+    -}
+    a.active(href=`?page=${page+1}`) &raquo;
+    
+  
+  script(src='/index.js')
+  

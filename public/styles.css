@@ -1,0 +1,95 @@
+.modal-body .form-horizontal .col-sm-2,
+.modal-body .form-horizontal .col-sm-10 {
+  width: 100%
+}
+
+.modal-body .form-horizontal .control-label {
+  text-align: left;
+}
+.modal-body .form-horizontal .col-sm-offset-2 {
+  margin-left: 15px;
+}
+.myModal {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.home {
+  color: white;
+  font-size: 30px;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+.create {
+  display: flex;
+  justify-content: center;
+}
+
+.addBook {
+  height: 30px;
+  margin-right: 30px;
+}
+
+.book {
+  color: white;
+  margin-left: 10px;
+}
+
+.plus {
+  margin-left: 2px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 900px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.items {
+  border: 1px solid black;
+  margin: 20px;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+
+a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+}
+
+.active {
+  justify-content: center;
+}
+
+.single-page {
+  text-align: center;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  margin-top: 29px;
+  margin-left: 8px;
+  border-radius: 5px;
+  height: 33px;
+}
+
+.search-button {
+  margin-left: 8px;
+}
+
+.search-results {
+  padding: 8px 16px;
+}

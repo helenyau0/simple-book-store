@@ -1,0 +1,30 @@
+include header
+body.single-page 
+  .book-container 
+    .single-book-info 
+      form(method='POST' action='/book/update/' + book.id + '?_method=PUT')
+        .book-info
+          label.update-fields Title: 
+          .fields
+            p.editable(value=book.id)=book.title
+        .book-info
+          label.update-fields Author:
+          .fields
+            p.editable(value=book.id)=book.author
+        .book-info
+          label.update-fields Genre:
+          .fields
+            p.editable(value=book.id)=book.genre
+        .book-info
+          label.update-fields Height:
+          .fields
+            p.editable(value=book.id)=book.height
+        .book-info
+          label.update-fields Publisher:
+          .fields
+            p.editable(value=book.id)=book.publisher
+        input.btn.btn-default.update(type='submit' name='_method' value= 'UPDATE')
+      form(method='POST' action='/book/delete/' + book.id + '?_method=DELETE')
+        input.btn.btn-default.delete(type='submit' name='_method' value='DELETE')
+      
+  script(src='/main.js')
