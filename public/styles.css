@@ -69,3 +69,27 @@ a {
 .active {
   justify-content: center;
 }
+
+.single-page {
+  text-align: center;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  margin-top: 29px;
+  margin-left: 8px;
+  border-radius: 5px;
+  height: 33px;
+}
+
+.search-button {
+  margin-left: 8px;
+}
+
+.search-results {
+  padding: 8px 16px;
+}

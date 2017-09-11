@@ -18,7 +18,11 @@ const get = (id) => {
 }
 
 const update = (id, book) => {
-  return db.one('UPDATE book SET title=$1, author=$2, genre=$3, height=$4, publisher=$5 WHERE id=$6 RETURNING *', [book[0], book[1], book[2], book[3], book[4], id])
+  return db.any('UPDATE book SET title=$1, author=$2, genre=$3, height=$4, publisher=$5 WHERE id=$6 RETURNING *', [book[0], book[1], book[2], book[3], book[4], id])
+}
+
+const search = (searchQuery) => {
+  return db.many(`SELECT * FROM book WHERE lower(title) LIKE $1::text OR lower(author) LIKE $1::text or lower(genre) LIKE $1::text LIMIT 10`, [`${searchQuery.replace(/\s+/,'%')}%`])
 }
 
 module.exports = {
@@ -26,5 +30,6 @@ module.exports = {
   create,
   remove,
   get,
-  update
+  update,
+  search
 }

@@ -5,5 +5,6 @@ module.exports = {
   create: book.create,
   remove: book.remove,
   get: book.get,
-  update: book.update
+  update: book.update,
+  search: book.search
 }

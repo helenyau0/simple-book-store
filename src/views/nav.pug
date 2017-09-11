@@ -1,4 +1,7 @@
 
 nav.navbar.navbar-inverse
     h1.book Simple Book Store
+    form(method='post' action='/book/search')
+      input.search(name='q' type='search')
+      input.btn.btn-default.search-button(type='submit' value='search')
     a.home(href='/') Home

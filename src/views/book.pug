@@ -1,26 +1,30 @@
 include header
-body 
-  h1 Single View, Puggin'
+body.single-page 
   .book-container 
     .single-book-info 
-      form(method='POST' action='/book/update/' + book.id)
+      form(method='POST' action='/book/update/' + book.id + '?_method=PUT')
         .book-info
-          p.label Title: 
-          p.editable(value=book.id)= book.title
+          label.update-fields Title: 
+          .fields
+            p.editable(value=book.id)=book.title
         .book-info
-          p.label Author: 
-          p.editable(value=book.id)= book.author
+          label.update-fields Author:
+          .fields
+            p.editable(value=book.id)=book.author
         .book-info
-          p.label Genre: 
-          p.editable(value=book.id)= book.genre
+          label.update-fields Genre:
+          .fields
+            p.editable(value=book.id)=book.genre
         .book-info
-          p.label Pages: 
-          p.editable(value=book.id)= book.pages
+          label.update-fields Height:
+          .fields
+            p.editable(value=book.id)=book.height
         .book-info
-          p.label Publisher: 
-          p.editable(value=book.id)= book.publisher
-        input(type='submit' value= 'update')
-      form(method='get' action='/book/delete/' + book.id)
-        input(type='submit' value='delete')
+          label.update-fields Publisher:
+          .fields
+            p.editable(value=book.id)=book.publisher
+        input.btn.btn-default.update(type='submit' name='_method' value= 'UPDATE')
+      form(method='POST' action='/book/delete/' + book.id + '?_method=DELETE')
+        input.btn.btn-default.delete(type='submit' name='_method' value='DELETE')
       
   script(src='/main.js')

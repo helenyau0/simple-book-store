@@ -6,11 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 const toggleInput = (event) => {
+  console.log('target', event.target.parentNode);
   event.target.style.display = 'none'
   const input = document.createElement('input')
   input.setAttribute('type', 'text')
   input.setAttribute('name', 'updatedBook')
-  input.setAttribute('placeholder', event.target.innerHTML)
+  input.setAttribute('value', event.target.innerHTML)
   event.target.parentNode.appendChild(input)
   input.style.display = 'block'
 }

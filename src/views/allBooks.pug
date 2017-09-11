@@ -39,10 +39,10 @@ body
   .container
     nav(aria-label='Page navigation')
       each book in books
-          a.active(href='/book/' + book.id)
-            span(aria-hidden='true')
-            .items
-              p=book.title
+        a.active(href='/book/' + book.id)
+          span(aria-hidden='true')
+          .items
+            p=book.title
               
     if page > 1
       a.active(href=`?page=${page-1}`) &laquo;

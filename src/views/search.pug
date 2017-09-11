@@ -1,0 +1,12 @@
+include header
+
+.container
+  for books in book
+    a.active(href='/book/' + books.id)
+      .items.search-results
+        p=books.title
+        p=books.author
+        p=books.genre
+        p=books.height
+        p=books.publisher
+  
